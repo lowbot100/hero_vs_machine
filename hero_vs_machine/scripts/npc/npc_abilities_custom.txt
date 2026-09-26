@@ -1,0 +1,98 @@
+"DOTAAbilities"
+{
+	"Version" "1"
+
+	//-------------------------------------------------------
+    // modifier definitions (datadriven)
+    //-------------------------------------------------------
+    "modifier_item_bracer_plus"
+    {
+        "BaseClass" "modifier_datadriven"
+        "Passive"        "1"
+        "IsHidden"       "1"
+        "Attributes"
+        {
+            "MODIFIER_ATTRIBUTE_MULTIPLE"  "0"
+        }
+        "Properties"
+        {
+            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"     "30"
+            "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"      "12"
+            "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"    "12"
+            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"   "0"
+            "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"    "4.5"
+            "MODIFIER_PROPERTY_HEALTH_BONUS"             "30"
+        }
+    }
+
+    "modifier_item_wraith_band_plus"
+    {
+        "BaseClass" "modifier_datadriven"
+        "Passive"        "1"
+        "IsHidden"       "1"
+        "Attributes"
+        {
+            "MODIFIER_ATTRIBUTE_MULTIPLE"  "0"
+        }
+        "Properties"
+        {
+            "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"          "30"
+            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"         "12"
+            "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"        "12"
+            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"   "36"
+            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"         "10.5"
+        }
+    }
+
+    "modifier_item_null_talisman_plus"
+    {
+        "BaseClass" "modifier_datadriven"
+        "Passive"        "1"
+        "IsHidden"       "1"
+        "Attributes"
+        {
+            "MODIFIER_ATTRIBUTE_MULTIPLE"  "0"
+        }
+        "Properties"
+        {
+            "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"        "30"
+            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"         "12"
+            "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"          "12"
+            "MODIFIER_PROPERTY_MANA_BONUS_PERCENTAGE"        "18"
+            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"          "6"
+        }
+    }
+
+	//-------------------------------------------------------
+	//-------------------------------------------------------
+	//-------------------------------------------------------
+	
+    "abilities_gold"
+	{
+	    "BaseClass" "ability_datadriven"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        //"AbilityTextureName"    "axe_battle_hunger"
+        "AbilityTextureName"    ""
+
+		"Modifiers"
+		{
+			"modifiers_abilities_gold"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsPurgable"		"0"
+				"EffectName"		"particle_name"
+				"EffectAttachType"	"follow_origin"
+				[ACTIONS]
+				
+			}
+			"modifiers_abilities_magic_immune"
+			{
+			    "States"
+			    {
+				    "MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+			    }
+			}
+		}
+	}
+}

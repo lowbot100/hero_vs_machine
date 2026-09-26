@@ -1,0 +1,21 @@
+"lang"
+{
+    "Language" "Schinese"
+    "Tokens"
+    {
+        "addon_game_name" "Hero Vs Machine"
+
+        //"DOTA_Tooltip_ability_abilityname_Description"		""
+        "DOTA_Tooltip_ability_item_bracer_plus"		                "护腕plus"
+        "item_bracer_plus_desc"   "提供：+30 力量，+12 敏捷，+12 智力，+4.5 生命恢复，+30 生命"
+        "DOTA_Tooltip_ability_item_bracer_plus_Description"	        "一位僧侣将铁匠给与的六个护腕，它将变得无比强大"
+        
+        "DOTA_Tooltip_ability_item_wraith_band_plus"		        "怨灵系带plus"
+        "item_wraith_band_plus_desc"  "提供：+30 敏捷，+12 力量，+12 智力，+36 攻速，+10.5 护甲"
+        "DOTA_Tooltip_ability_item_wraith_band_plus_Description"    "一位好心的怨灵将系带变得无比强大，这或许是一件护身符？"
+
+        "DOTA_Tooltip_ability_item_null_talisman_plus"		        "空灵挂件plus"
+        "item_null_talisman_plus_desc"  "提供：+30 智力，+12 力量，+12 敏捷，+18% 法力上限，+6 法力恢复"
+        "DOTA_Tooltip_ability_item_null_talisman_plus_Description"  "虚空中遁化出的力量，希望有人能掌握它"
+    }
+}
