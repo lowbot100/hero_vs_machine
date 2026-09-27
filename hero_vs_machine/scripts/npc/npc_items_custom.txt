@@ -62,7 +62,7 @@
     }
     "item_bracer_plus"
     {
-        "BaseClass"    "item_lua"
+        "BaseClass"    "item_datadriven"
         "ID" "90001"
         "ItemAliases" "plus"
         "ItemCost" "3030"
@@ -95,7 +95,7 @@
     }
     "item_wraith_band_plus"
     {
-        "BaseClass" "item_lua"
+        "BaseClass" "item_datadriven"
         "ID" "90002"
         "ItemAliases" "plus"
         "ItemCost" "3030"
@@ -128,7 +128,7 @@
     }
     "item_null_talisman_plus"
     {
-        "BaseClass" "item_lua"
+        "BaseClass" "item_datadriven"
         "ID" "90003"
         "ItemAliases" "plus"
         "ItemCost" "3030"
