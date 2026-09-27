@@ -1,7 +1,7 @@
 "DOTAItems"
 {
     "Version" "1"
- 
+  
     "Modifiers"
     {
         "modifier_item_bracer_plus"
@@ -60,9 +60,6 @@
             }
         }
     }
-    //-------------------------------------------------------
-    //护腕plus
-    //-------------------------------------------------------
     "item_bracer_plus"
     {
         "BaseClass"    "item_lua"
@@ -73,37 +70,32 @@
         "ItemSellable" "1"
         "ItemPurchasable" "1"
         "ItemDroppable" "1"
-        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ItemShopTags"                    "damage;int;agi;str"
-        "ItemQuality"                    "common"
-        "SuggestEarlygame"                "1"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemShopTags" "damage;int;agi;str"
+        "ItemQuality" "common"
+        "SuggestEarlygame" "1"
         "InventoryIcon" "panorama/images/items/bracer_png.vtex_c"
         "Model" "models/items/item_bracer.vmdl"
-        
         "Modifiers"
         {
-            "modifier_item_bracer_plus"         "modifier_item_bracer_plus"
+            "modifier_item_bracer_plus" "modifier_item_bracer_plus"
         }
     }
     "item_recipe_bracer_plus"
     {
-        "ItemRecipe"          "1"
-        "ItemCost"            "10"
+        "ItemRecipe" "1"
+        "ItemCost" "10"
         "ItemSellable" "1"
         "ItemPurchasable" "1"
-        "ItemResult"          "item_bracer_plus"
+        "ItemResult" "item_bracer_plus"
         "ItemRequirements"
         {
             "01" "item_bracer;item_bracer;item_bracer;item_bracer;item_bracer;item_bracer"
         }
     }
-
-    //-------------------------------------------------------
-    //怨灵系带plus
-    //-------------------------------------------------------
     "item_wraith_band_plus"
     {
-        "BaseClass"    "item_lua"
+        "BaseClass" "item_lua"
         "ID" "90002"
         "ItemAliases" "plus"
         "ItemCost" "3030"
@@ -111,36 +103,32 @@
         "ItemSellable" "1"
         "ItemPurchasable" "1"
         "ItemDroppable" "1"
-        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ItemShopTags"                    "damage;int;agi;str"
-        "ItemQuality"                    "common"
-        "SuggestEarlygame"                "1"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemShopTags" "damage;int;agi;str"
+        "ItemQuality" "common"
+        "SuggestEarlygame" "1"
         "InventoryIcon" "panorama/images/items/wraith_band_png.vtex_c"
         "Model" "models/items/item_wraith_band.vmdl"
         "Modifiers"
         {
-            "modifier_item_wraith_band_plus"         "modifier_item_wraith_band_plus"
+            "modifier_item_wraith_band_plus" "modifier_item_wraith_band_plus"
         }
     }
     "item_recipe_wraith_band_plus"
     {
-        "ItemRecipe"          "1"
-        "ItemCost"            "10"
+        "ItemRecipe" "1"
+        "ItemCost" "10"
         "ItemSellable" "1"
         "ItemPurchasable" "1"
-        "ItemResult"          "item_wraith_band_plus"
+        "ItemResult" "item_wraith_band_plus"
         "ItemRequirements"
         {
             "01" "item_wraith_band;item_wraith_band;item_wraith_band;item_wraith_band;item_wraith_band;item_wraith_band"
         }
     }
-
-    //-------------------------------------------------------
-    //空灵挂件plus
-    //-------------------------------------------------------
     "item_null_talisman_plus"
     {
-        "BaseClass"    "item_lua"
+        "BaseClass" "item_lua"
         "ID" "90003"
         "ItemAliases" "plus"
         "ItemCost" "3030"
@@ -148,27 +136,43 @@
         "ItemSellable" "1"
         "ItemPurchasable" "1"
         "ItemDroppable" "1"
-        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ItemShopTags"                    "damage;int;agi;str"
-        "ItemQuality"                    "common"
-        "SuggestEarlygame"                "1"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemShopTags" "damage;int;agi;str"
+        "ItemQuality" "common"
+        "SuggestEarlygame" "1"
         "InventoryIcon" "panorama/images/items/null_talisman_png.vtex_c"
         "Model" "models/items/item_null_talisman.vmdl"
         "Modifiers"
         {
-            "modifier_item_null_talisman_plus"        "modifier_item_null_talisman_plus"
+            "modifier_item_null_talisman_plus" "modifier_item_null_talisman_plus"
         }
     }
     "item_recipe_null_talisman_plus"
     {
-        "ItemRecipe"          "1"
-        "ItemCost"            "10"
+        "ItemRecipe" "1"
+        "ItemCost" "10"
         "ItemSellable" "1"
         "ItemPurchasable" "1"
-        "ItemResult"          "item_null_talisman_plus"
+        "ItemResult" "item_null_talisman_plus"
         "ItemRequirements"
         {
             "01" "item_null_talisman;item_null_talisman;item_null_talisman;item_null_talisman;item_null_talisman;item_null_talisman"
         }
+    }
+    // 使用引擎识别的 item_tpscroll 名称，才能进入专用传送卷轴栏
+    "item_tpscroll"
+    {
+        "BaseClass" "item_lua"
+        "ID" "90004"
+        "ItemCost" "100"
+        "ItemKillable" "0"
+        "ItemSellable" "1"
+        "ItemPurchasable" "1"
+        "ItemDroppable" "1"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityCooldown" "10"
+        "AbilityManaCost" "75"
+        "ItemQuality" "common"
+        "InventoryIcon" "panorama/images/items/tpscroll_png.vtex_c"
     }
 }
