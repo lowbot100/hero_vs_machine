@@ -1,7 +1,7 @@
 "DOTAItems"
 {
     "Version" "1"
-
+ 
     "Modifiers"
     {
         "modifier_item_bracer_plus"
@@ -65,7 +65,7 @@
     //-------------------------------------------------------
     "item_bracer_plus"
     {
-        "BaseClass"    "item_datadriven"
+        "BaseClass"    "item_lua"
         "ID" "90001"
         "ItemAliases" "plus"
         "ItemCost" "3030"
@@ -73,10 +73,10 @@
         "ItemSellable" "1"
         "ItemPurchasable" "1"
         "ItemDroppable" "1"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ItemShopTags"					"damage;int;agi;str"
-        "ItemQuality"					"common"
-        "SuggestEarlygame"				"1"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemShopTags"                    "damage;int;agi;str"
+        "ItemQuality"                    "common"
+        "SuggestEarlygame"                "1"
         "InventoryIcon" "panorama/images/items/bracer_png.vtex_c"
         "Model" "models/items/item_bracer.vmdl"
         
@@ -103,7 +103,7 @@
     //-------------------------------------------------------
     "item_wraith_band_plus"
     {
-        "BaseClass"    "item_datadriven"
+        "BaseClass"    "item_lua"
         "ID" "90002"
         "ItemAliases" "plus"
         "ItemCost" "3030"
@@ -111,10 +111,10 @@
         "ItemSellable" "1"
         "ItemPurchasable" "1"
         "ItemDroppable" "1"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ItemShopTags"					"damage;int;agi;str"
-        "ItemQuality"					"common"
-        "SuggestEarlygame"				"1"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemShopTags"                    "damage;int;agi;str"
+        "ItemQuality"                    "common"
+        "SuggestEarlygame"                "1"
         "InventoryIcon" "panorama/images/items/wraith_band_png.vtex_c"
         "Model" "models/items/item_wraith_band.vmdl"
         "Modifiers"
@@ -140,7 +140,7 @@
     //-------------------------------------------------------
     "item_null_talisman_plus"
     {
-        "BaseClass"    "item_datadriven"
+        "BaseClass"    "item_lua"
         "ID" "90003"
         "ItemAliases" "plus"
         "ItemCost" "3030"
@@ -148,10 +148,10 @@
         "ItemSellable" "1"
         "ItemPurchasable" "1"
         "ItemDroppable" "1"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ItemShopTags"					"damage;int;agi;str"
-        "ItemQuality"					"common"
-        "SuggestEarlygame"				"1"
+        "AbilityBehavior"                "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemShopTags"                    "damage;int;agi;str"
+        "ItemQuality"                    "common"
+        "SuggestEarlygame"                "1"
         "InventoryIcon" "panorama/images/items/null_talisman_png.vtex_c"
         "Model" "models/items/item_null_talisman.vmdl"
         "Modifiers"
