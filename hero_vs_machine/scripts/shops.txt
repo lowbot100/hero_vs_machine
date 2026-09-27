@@ -23,5 +23,12 @@
 		"item"		"item_mystic_staff"
 
         "item"		"item_ultimate_orb"
+		"item" 		"item_bracer_plus"
+		"item" 		"item_wraith_band_plus"
+		"item" 		"item_null_talisman_plus"
     }
+	"consumables"
+	{
+		"item" "item_tpscroll"
+	}
 }
