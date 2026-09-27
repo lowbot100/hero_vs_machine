@@ -19,7 +19,16 @@ function modifier_item_null_talisman_plus:DeclareFunctions()
     }
 end
 
--- Use a dynamic calculation so the bonus scales with the unit's current max mana
+function modifier_item_null_talisman_plus:OnCreated()
+    if IsServer() then
+        local parent = self:GetParent()
+        if parent then
+            self.mana_pct = 18
+            self.mana_bonus = math.floor(parent:GetMaxMana() * (self.mana_pct/100))
+        end
+    end
+end
+
 function modifier_item_null_talisman_plus:GetModifierBonusStats_Intellect()
     return 30
 end
@@ -30,12 +39,7 @@ function modifier_item_null_talisman_plus:GetModifierBonusStats_Agility()
     return 12
 end
 function modifier_item_null_talisman_plus:GetModifierManaBonus()
-    local parent = self:GetParent()
-    if parent then
-        local maxMana = parent:GetMaxMana() or 0
-        return math.floor(maxMana * 0.18)
-    end
-    return 0
+    return self.mana_bonus or 0
 end
 function modifier_item_null_talisman_plus:GetModifierConstantManaRegen()
     return 6
