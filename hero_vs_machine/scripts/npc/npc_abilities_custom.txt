@@ -1,97 +1,109 @@
 "DOTAAbilities"
 {
 	"Version" "1"
-
-	//-------------------------------------------------------
-    // modifier definitions (datadriven)
-    //-------------------------------------------------------
-    "modifier_item_bracer_plus"
-    {
-        "BaseClass" "modifier_datadriven"
-        "Passive"        "1"
-        "IsHidden"       "1"
-        "Attributes"
-        {
-            "MODIFIER_ATTRIBUTE_MULTIPLE"  "0"
-        }
-        "Properties"
-        {
-            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"     "30"
-            "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"      "12"
-            "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"    "12"
-            "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"   "0"
-            "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"    "4.5"
-            "MODIFIER_PROPERTY_HEALTH_BONUS"             "30"
-        }
-    }
-
-    "modifier_item_wraith_band_plus"
-    {
-        "BaseClass" "modifier_datadriven"
-        "Passive"        "1"
-        "IsHidden"       "1"
-        "Attributes"
-        {
-            "MODIFIER_ATTRIBUTE_MULTIPLE"  "0"
-        }
-        "Properties"
-        {
-            "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"          "30"
-            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"         "12"
-            "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"        "12"
-            "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"   "36"
-            "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"         "10.5"
-        }
-    }
-
-    "modifier_item_null_talisman_plus"
-    {
-        "BaseClass" "modifier_datadriven"
-        "Passive"        "1"
-        "IsHidden"       "1"
-        "Attributes"
-        {
-            "MODIFIER_ATTRIBUTE_MULTIPLE"  "0"
-        }
-        "Properties"
-        {
-            "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"        "30"
-            "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"         "12"
-            "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"          "12"
-            "MODIFIER_PROPERTY_MANA_BONUS_PERCENTAGE"        "18"
-            "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"          "6"
-        }
-    }
-
-	//-------------------------------------------------------
-	//-------------------------------------------------------
-	//-------------------------------------------------------
 	
     "abilities_gold"
 	{
 	    "BaseClass" "ability_datadriven"
 		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         //"AbilityTextureName"    "axe_battle_hunger"
-        "AbilityTextureName"    ""
+        // "AbilityTextureName"    ""
 
 		"Modifiers"
 		{
 			"modifiers_abilities_gold"
 			{
-				"Passive"			"1"
-				"IsHidden"			"0"
-				"IsPurgable"		"0"
-				"EffectName"		"particle_name"
-				"EffectAttachType"	"follow_origin"
-				[ACTIONS]
-				
+				"BaseClass"         "modifier_datadriven"
+                "Passive"           "1"
+                "IsHidden"          "0"
+                "IsPurgable"        "0"
+				// "EffectName"		"particle_name"
+				// "EffectAttachType"	"follow_origin"
 			}
 			"modifiers_abilities_magic_immune"
 			{
+                "BaseClass"         "modifier_datadriven"
+                "Passive"           "1"
+                "IsHidden"          "0"
+                "IsPurgable"        "0"
 			    "States"
 			    {
 				    "MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
 			    }
+			}
+		}
+	}
+	"abilities_invulnerable"
+	{
+		"BaseClass"         "ability_datadriven"
+		"AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel" "1"
+		"Modifiers"
+		{
+			"modifier_invulnerable"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	"abilities_tower_bonus"
+	{
+		"BaseClass"         "ability_datadriven"
+		"AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel" "1"
+		"AbilityCastPoint"    "0.0"
+		"AbilityCastRange"    "200"
+		"AbilityCooldown"    "0"
+		"AbilityManaCost"    "0"
+		"Modifiers"
+		{
+			// 光环提供者（挂在基地上的 modifier）
+			"tower_bonus"
+			{
+				"Passive"               "1"
+				"IsHidden"              "0"
+				"IsDebuff"              "0"
+
+				"Aura"                  "tower_bonus_effect"
+				"Aura_Radius"           "200"
+				"Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"            "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_ApplyToCaster"    "0"    // 基地不通过光环获得效果（我们会单独给基地一个 modifier）
+			}
+			// 光环授予的效果（不包含无敌）
+			"tower_bonus_effect"
+			{
+				"Passive"           "1"
+				"IsHidden"          "0"    // 隐藏（看需要可改为 0）
+				"IsDebuff"          "0"
+				"Properties"
+				{
+					// 护甲 +10
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"      	"10"
+
+					// 魔法抗性 +10%
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"  	"10"
+
+					// 生命恢复 +10
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"     	"10"
+
+					// 魔法恢复 +10
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"       	"10"
+
+					// 攻击速度 +25
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	"25"
+
+					// 技能冷却时间减少 25%
+					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"       	"25"
+				}
 			}
 		}
 	}

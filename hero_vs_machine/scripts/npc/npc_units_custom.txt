@@ -2,7 +2,7 @@
 {
     "npc_dota_home_tower"
 	{
-	    //"BaseClass"		"npc_dota_tower"
+	    "BaseClass"		"npc_dota_tower"
         "Model"         "models/props_structures/radiant_tower001.vmdl"  // Model.模型。
 		"SoundSet"					"0"					// Name of sound set.声音集的名称。
 		"Level"						"1"                 // 等级
@@ -40,13 +40,13 @@
 		"BaseAttackSpeed"		"500"                           //基础攻击速度(模型初始攻击速度)
 		"AttackDamageMin"			"1"			// Damage range min.最小攻击伤害(伤害浮动 and 伤害数值)
 		"AttackDamageMax"			"1"			// Damage range max.最大攻击伤害
-		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical" //攻击伤害类型(伤害_类型_装甲物理)
+		"AttackDamageType"			"DAMAGE_TYPE_PHYSICAL" //攻击伤害类型(伤害_类型_装甲物理)
 		"AttackRate"				"1.0"		// Speed of attack.基础攻击速度(模型攻击间隔)
 		"AttackAnimationPoint"		"0.75"		// Normalized time in animation cycle to attack.动画周期中攻击的标准化时间。
 		"AttackAcquisitionRange"	"1200"		// Range within a target can be acquired.可以获得目标内的距离。攻击获取范围(应该是AI相关的)
 		"AttackRange"				"1000"		// Range within a target can be attacked.可以获得目标内的距离。攻击范围
 		"AttackRangeBuffer"			"250"		// Extra attack range within which the target can move without canceling the attack额外的攻击范围，在此范围内目标可以移动而不取消攻击
-		"ProjectileModel"			"particles\econ\events\ti9\rock_golem_tower\radiant_tower_attack_model.vpcf" // Particle system model for projectile.抛射体的粒子系统模型。抛射体模型  远程有效
+		"ProjectileModel"			"particles/econ/events/ti9/rock_golem_tower/radiant_tower_attack_model.vpcf" // Particle system model for projectile.抛射体的粒子系统模型。抛射体模型  远程有效
 		"ProjectileSpeed"			"600"		// Speed of projectile.抛射体速度。
 
 		// Attributes属性
@@ -67,7 +67,7 @@
 
 		// Bounds
 		//----------------------------------------------------------------
-		"BoundsHullName"			"150"  //边界外壳名称  填数字为碰撞体积
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"  //边界外壳名称  填数字为碰撞体积
 		"RingRadius"				"150"        //环半径  选取半径
 		"HealthBarOffset"			"-1"		// -1 means use the models.-1表示使用模型
 
@@ -112,7 +112,7 @@
 
 	"npc_dota_gold_mine"
 	{
-		//"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
     	"Model"         "models/props_gameplay/treasure_chest001.vmdl"  // Model.模型。
 		"SoundSet"					"0"					// Name of sound set.声音集的名称。
 		"Level"						"1"                 // 等级
@@ -143,6 +143,76 @@
 		"MovementSpeed"				"300"		// Speed移动速度 可移动时有效
 		"StatusHealth"				"50"		// Base health.基础健康。
 		"StatusHealthRegen"			"0"			// Health regeneration rate.健康再生率。
+	}
+	"npc_dota_home_ancient_good"
+	{
+	    "BaseClass"		"npc_dota_tower"
+        "Model"         "models/props_structures/good_ancient001.vmdl"
+		"SoundSet"					"0"
+		"Level"						"1"
+		"ModelScale"                "1"
+		"HasInventory"              "0"
+		"IsAncient"					"1"
+
+		"StatusHealth"				"10000"
+		"StatusHealthRegen"			"100"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		"StatusStartingMana"		"-1"
+
+		"ArmorPhysical"				"50"
+		"MagicalResistance"			"50"
+
+		"Ability1"      			"sale_tower"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_LARGE"  //边界外壳名称  填数字为碰撞体积
+		"RingRadius"				"250"        //环半径  选取半径
+		"HealthBarOffset"			"-1"		// -1 means use the models.-1表示使用模型
+
+		"AttributePrimary"			""
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"	"0"
+		"AttributeIntelligenceGain"	"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"1.0"
+		"HasAggressiveStance"		"0"
+		"FollowRange"				"100"
+	}
+	"npc_dota_build_good_aura"
+	{
+	    "BaseClass"		"npc_dota_tower"
+        "Model"         "models/props_structures/tower_upgrade/tower_upgrade.vmdl"
+		"SoundSet"					"0"
+		"Level"						"1"
+		"ModelScale"                "1"
+		"HasInventory"              "0"
+		"IsAncient"					"1"
+
+		"Ability1"      			"abilities_tower_bonus"
+		"Ability2"					"abilities_invulnerable"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_LARGE"  //边界外壳名称  填数字为碰撞体积
+		"RingRadius"				"250"        //环半径  选取半径
+		"HealthBarOffset"			"-1"		// -1 means use the models.-1表示使用模型
+
+		"AttributePrimary"			""
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"	"0"
+		"AttributeIntelligenceGain"	"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"1.0"
+		"HasAggressiveStance"		"0"
+		"FollowRange"				"100"
 	}
 }
 

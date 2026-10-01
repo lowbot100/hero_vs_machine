@@ -1,183 +1,40 @@
 "DOTAItems"
 {
     "Version" "1"
-  
-    "Modifiers"
+
+    "item_test_bracer_plus"
     {
-        "modifier_item_bracer_plus"
-        {
-            "BaseClass" "modifier_datadriven"
-            "Passive"        "1"
-            "IsHidden"       "1"
-            "Attributes"
-            {
-                "MODIFIER_ATTRIBUTE_MULTIPLE"  "0"
-            }
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"     "30"
-                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"      "12"
-                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"    "12"
-                "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"   "0"
-                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"    "4.5"
-                "MODIFIER_PROPERTY_HEALTH_BONUS"             "30"
-            }
-        }
-        "modifier_item_wraith_band_plus"
-        {
-            "BaseClass" "modifier_datadriven"
-            "Passive"        "1"
-            "IsHidden"       "1"
-            "Attributes"
-            {
-                "MODIFIER_ATTRIBUTE_MULTIPLE"  "0"
-            }
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"          "30"
-                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"         "12"
-                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"        "12"
-                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"   "36"
-                "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"         "10.5"
-            }
-        }
-        "modifier_item_null_talisman_plus"
-        {
-            "BaseClass" "modifier_datadriven"
-            "Passive"        "1"
-            "IsHidden"       "1"
-            "Attributes"
-            {
-                "MODIFIER_ATTRIBUTE_MULTIPLE"  "0"
-            }
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"        "30"
-                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"         "12"
-                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"          "12"
-                "MODIFIER_PROPERTY_MANA_BONUS_PERCENTAGE"        "18"
-                "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"          "6"
-            }
-        }
+        "BaseClass"          "item_datadriven"
+        "ID"                 "99001"
+
+        "ItemCost"           "3030"
+        "ItemPurchasable"    "1"
+        "ItemSellable"       "1"
+        "ItemDroppable"      "1"
+        "ItemKillable"       "0"
+        "ItemPermanent"      "1"
+
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemQuality"        "common"
+        "ItemShopTags"       "component"
     }
-    "item_bracer_plus"
+
+    "item_recipe_test_bracer_plus"
     {
-        "BaseClass"    "item_datadriven"
-        "ID" "90001"
-        "ItemAliases" "plus"
-        "ItemCost" "3030"
-        "ItemKillable" "0"
-        "ItemSellable" "1"
-        "ItemPurchasable" "1"
-        "ItemDroppable" "1"
-        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ItemShopTags" "damage;int;agi;str"
-        "ItemQuality" "common"
-        "SuggestEarlygame" "1"
-        "InventoryIcon" "panorama/images/items/bracer_png.vtex_c"
-        "Model" "models/items/item_bracer.vmdl"
-        "Modifiers"
-        {
-            "modifier_item_bracer_plus" "modifier_item_bracer_plus"
-        }
-    }
-    "item_recipe_bracer_plus"
-    {
-        "BaseClass" "item_recipe"
-        "ItemRecipe" "1"
-        "ItemCost" "10"
-        "ItemSellable" "1"
-        "ItemPurchasable" "1"
-        "ItemResult" "item_bracer_plus"
+        "BaseClass"          "item_recipe"
+        "ID"                 "99002"
+
+        "ItemRecipe"         "1"
+        "ItemCost"           "0"
+        "ItemPurchasable"    "1"
+        "ItemSellable"       "1"
+
+        "ItemResult"         "item_test_bracer_plus"
+        "ItemShopTags"       "recipe"
+
         "ItemRequirements"
         {
             "01" "item_bracer;item_bracer;item_bracer;item_bracer;item_bracer;item_bracer"
         }
-    }
-    "item_wraith_band_plus"
-    {
-        "BaseClass" "item_datadriven"
-        "ID" "90002"
-        "ItemAliases" "plus"
-        "ItemCost" "3030"
-        "ItemKillable" "0"
-        "ItemSellable" "1"
-        "ItemPurchasable" "1"
-        "ItemDroppable" "1"
-        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ItemShopTags" "damage;int;agi;str"
-        "ItemQuality" "common"
-        "SuggestEarlygame" "1"
-        "InventoryIcon" "panorama/images/items/wraith_band_png.vtex_c"
-        "Model" "models/items/item_wraith_band.vmdl"
-        "Modifiers"
-        {
-            "modifier_item_wraith_band_plus" "modifier_item_wraith_band_plus"
-        }
-    }
-    "item_recipe_wraith_band_plus"
-    {
-        "BaseClass" "item_recipe"
-        "ItemRecipe" "1"
-        "ItemCost" "10"
-        "ItemSellable" "1"
-        "ItemPurchasable" "1"
-        "ItemResult" "item_wraith_band_plus"
-        "ItemRequirements"
-        {
-            "01" "item_wraith_band;item_wraith_band;item_wraith_band;item_wraith_band;item_wraith_band;item_wraith_band"
-        }
-    }
-    "item_null_talisman_plus"
-    {
-        "BaseClass" "item_datadriven"
-        "ID" "90003"
-        "ItemAliases" "plus"
-        "ItemCost" "3030"
-        "ItemKillable" "0"
-        "ItemSellable" "1"
-        "ItemPurchasable" "1"
-        "ItemDroppable" "1"
-        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ItemShopTags" "damage;int;agi;str"
-        "ItemQuality" "common"
-        "SuggestEarlygame" "1"
-        "InventoryIcon" "panorama/images/items/null_talisman_png.vtex_c"
-        "Model" "models/items/item_null_talisman.vmdl"
-        "Modifiers"
-        {
-            "modifier_item_null_talisman_plus" "modifier_item_null_talisman_plus"
-        }
-    }
-    "item_recipe_null_talisman_plus"
-    {
-        "BaseClass" "item_recipe"
-        "ItemRecipe" "1"
-        "ItemCost" "10"
-        "ItemSellable" "1"
-        "ItemPurchasable" "1"
-        "ItemResult" "item_null_talisman_plus"
-        "ItemRequirements"
-        {
-            "01" "item_null_talisman;item_null_talisman;item_null_talisman;item_null_talisman;item_null_talisman;item_null_talisman"
-        }
-    }
-    // 使用引擎识别的 item_tpscroll 名称，才能进入专用传送卷轴栏
-    "item_tpscroll"
-    {
-        "BaseClass" "item_lua"
-        "ID" "90004"
-        "ItemCost" "0"
-        "ItemKillable" "0"
-        "ItemSellable" "1"
-        "ItemPurchasable" "1"
-        "ItemDroppable" "1"
-        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-        "AbilityChannelTime" "5.0"
-        "AbilityCastRange" "99999"
-        "AbilityCooldown" "10"
-        "AbilityManaCost" "75"
-        "ItemQuality" "common"
-        "InventoryIcon" "panorama/images/items/tpscroll_png.vtex_c"
     }
 }
