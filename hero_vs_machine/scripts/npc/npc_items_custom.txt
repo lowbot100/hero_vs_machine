@@ -2,39 +2,288 @@
 {
     "Version" "1"
 
-    "item_test_bracer_plus"
+    //-------------------------------------
+    //护腕plus
+    //-------------------------------------
+    "item_bracer_plus"
     {
-        "BaseClass"          "item_datadriven"
-        "ID"                 "99001"
-
-        "ItemCost"           "3030"
-        "ItemPurchasable"    "1"
-        "ItemSellable"       "1"
-        "ItemDroppable"      "1"
-        "ItemKillable"       "0"
-        "ItemPermanent"      "1"
-
-        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "ItemQuality"        "common"
-        "ItemShopTags"       "component"
+        "BaseClass"    "item_datadriven"
+        "ID" "90001"
+        "ItemAliases" "plus"
+        "ItemCost" "3030"
+        "ItemKillable" "0"
+        "ItemSellable" "1"
+        "ItemPurchasable" "1"
+        "ItemDroppable" "1"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemShopTags" "damage;int;agi;str"
+        "ItemQuality" "common"
+        "SuggestEarlygame" "1"
+        "InventoryIcon" "panorama/images/items/bracer_png.vtex_c"
+        "Model" "models/props_gameplay/red_box.vmdl"
+        "AbilitySpecial"
+        {
+            "bonus_strength" "30"
+            "bonus_agility" "12"
+            "bonus_intellect" "12"
+            "bonus_health_regen" "4.5"
+            "bonus_health" "300"
+        }
+        "Modifiers"
+        {
+            // "modifier_item_bracer_plus" "modifier_item_bracer_plus"
+            "modifier_item_bracer_plus"
+            {
+                "BaseClass" "modifier_datadriven"
+                "Passive"       "1"
+                "IsHidden"      "0"
+                "Attributes"
+                {
+                    "MODIFIER_ATTRIBUTE_MULTIPLE"  "1"
+                }
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"     "30"
+                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"      "12"
+                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"    "12"
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"    "4.5"
+                    "MODIFIER_PROPERTY_HEALTH_BONUS"             "300"
+                }
+            }
+        }
     }
-
-    "item_recipe_test_bracer_plus"
+    "item_recipe_bracer_plus"
     {
-        "BaseClass"          "item_recipe"
-        "ID"                 "99002"
-
-        "ItemRecipe"         "1"
-        "ItemCost"           "0"
-        "ItemPurchasable"    "1"
-        "ItemSellable"       "1"
-
-        "ItemResult"         "item_test_bracer_plus"
-        "ItemShopTags"       "recipe"
-
+        "BaseClass" "item_recipe"
+        "ID" "90002"
+        "ItemRecipe" "1"
+        "ItemCost" "0"
+        "ItemSellable" "1"
+        "ItemPurchasable" "1"
+        "ItemResult" "item_bracer_plus"
+        "ItemShopTags"			"recipe"
         "ItemRequirements"
         {
             "01" "item_bracer;item_bracer;item_bracer;item_bracer;item_bracer;item_bracer"
         }
     }
+
+    //-------------------------------------
+    //怨灵系带plus
+    //-------------------------------------
+    "item_wraith_band_plus"
+    {
+        "BaseClass" "item_datadriven"
+        "ID" "90003"
+        "ItemAliases" "plus"
+        "ItemCost" "3030"
+        "ItemKillable" "0"
+        "ItemSellable" "1"
+        "ItemPurchasable" "1"
+        "ItemDroppable" "1"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemShopTags" "damage;int;agi;str"
+        "ItemQuality" "common"
+        "SuggestEarlygame" "1"
+        "InventoryIcon" "panorama/images/items/wraith_band_png.vtex_c"
+        "Model" "models/props_gameplay/red_box.vmdl"
+        "AbilitySpecial" 
+        { 
+            "bonus_agility" "30"
+            "bonus_strength" "12" 
+            "bonus_intellect" "12" 
+            "bonus_attack_speed" "36" 
+            "bonus_armor" "10.5" 
+        }
+        "Modifiers"
+        {
+            // "modifier_item_wraith_band_plus" "modifier_item_wraith_band_plus"
+            "modifier_item_wraith_band_plus"
+            {
+                "BaseClass" "modifier_datadriven"
+                "Passive"       "1"
+                "IsHidden"      "0"
+                "Attributes"
+                {
+                    "MODIFIER_ATTRIBUTE_MULTIPLE"  "1"
+                }
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"          "30"
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"         "12"
+                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"        "12"
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"   "36"
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"         "10.5"
+                }
+            }
+        }
+    }
+    "item_recipe_wraith_band_plus"
+    {
+        "BaseClass" "item_recipe"
+        "ID" "90004"
+        "ItemRecipe" "1"
+        "ItemCost" "0"
+        "ItemSellable" "1"
+        "ItemPurchasable" "1"
+        "ItemResult" "item_wraith_band_plus"
+        "ItemShopTags"			"recipe"
+        "ItemRequirements"
+        {
+            "01" "item_wraith_band;item_wraith_band;item_wraith_band;item_wraith_band;item_wraith_band;item_wraith_band"
+        }
+    }
+
+    //-------------------------------------
+    //空灵挂件plus
+    //-------------------------------------
+    "item_null_talisman_plus"
+    {
+        "BaseClass" "item_datadriven"
+        "ID" "90005"
+        "ItemAliases" "plus"
+        "ItemCost" "3030"
+        "ItemKillable" "0"
+        "ItemSellable" "1"
+        "ItemPurchasable" "1"
+        "ItemDroppable" "1"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "ItemShopTags" "damage;int;agi;str"
+        "ItemQuality" "common"
+        "SuggestEarlygame" "1"
+        "InventoryIcon" "panorama/images/items/null_talisman_png.vtex_c"
+        "Model" "models/props_gameplay/red_box.vmdl"
+        "AbilitySpecial"
+        {
+            "bonus_intellect" "30"
+            "bonus_strength" "12"
+            "bonus_agility" "12"
+            "bonus_mana" "18"
+            "bonus_mana_regen" "6"
+        }
+        "Modifiers"
+        {
+            // "modifier_item_null_talisman_plus" "modifier_item_null_talisman_plus"
+            "modifier_item_null_talisman_plus"
+            {
+                "BaseClass" "modifier_datadriven"
+                "Passive"       "1"
+                "IsHidden"      "0"
+                "Attributes"
+                {
+                    "MODIFIER_ATTRIBUTE_MULTIPLE"  "1"
+                }
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"        "30"
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"         "12"
+                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"          "12"
+                    "MODIFIER_PROPERTY_MANA_BONUS"                   "18"
+                    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"          "6"
+                }
+            }
+        }
+    }
+    "item_recipe_null_talisman_plus"
+    {
+        "BaseClass" "item_recipe"
+        "ID" "90006"
+        "ItemRecipe" "1"
+        "ItemCost" "0"
+        "ItemSellable" "1"
+        "ItemPurchasable" "1"
+        "ItemResult" "item_null_talisman_plus"
+        "ItemShopTags"			"recipe"
+        "ItemRequirements"
+        {
+            "01" "item_null_talisman;item_null_talisman;item_null_talisman;item_null_talisman;item_null_talisman;item_null_talisman"
+        }
+    }
+    //-------------------------------------
+    //MVM水壶Power Up Canteen 7~8
+    //-------------------------------------
+    "power_up_canteen_ubercharged" //无敌水壶
+    {
+        "BaseClass" "item_datadriven"
+        "ID" "90007"
+        "ItemAliases" "power;up;canteen;uber;ubercharged"
+        "ItemCost" "75"
+        "ItemKillable" "0"
+        "ItemSellable" "1"
+        "ItemPurchasable" "1"
+        "ItemDroppable" "1"
+
+        "ItemShopTags" "consumable"
+        "ItemQuality" "consumable"
+        "IsConsumable" "1"
+
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "SuggestEarlygame" "1"
+        "InventoryIcon" "ubercharge_canteen"
+        "Model" "models/props_gameplay/red_box.vmdl"
+
+        "ItemStackable"         "1"
+        "ItemStackLimit"        "3"
+        "ItemInitialCharges" "0"
+
+        "OnSpellStart"
+        {
+            "ApplyModifier"
+            {
+                "Target" "CASTER"
+                "ModifierName" "modifier_power_up_canteen_ubercharged"
+                "Duration" "5.0"
+            }
+            //如果引擎没有自动消耗该物品，你可以显式把它从英雄身上移除，示例（按需启用）：
+            // "RemoveItem"
+            // {
+            //     "Target" "CASTER"
+            //     "ItemName" "power_up_canteen_ubercharged"
+            // }
+        }
+        "Modifiers"
+        {
+            "modifier_power_up_canteen_ubercharged"
+            {
+                "BaseClass" "modifier_datadriven"
+                "Passive"       "1"
+                "IsHidden"      "0"
+                "IsPurgable"    "0"
+                "RemoveOnDeath" "1"
+                "States"
+                {
+                    "MODIFIER_STATE_INVULNERABLE"       "MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+        }
+    }
+    //-------------------------------------
+    //传送卷轴
+    //-------------------------------------
+    "item_tpscroll"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+
+        "ItemCost" "0"
+
+        "AbilityCastRange"				"99999"
+        "AbilityChannelTime"			"1.0"
+        "AbilityCooldown"				"10.0"
+        "AbilityManaCost"				"0"
+        "AbilityGoldCost"    	        "10"
+
+        "ItemShopTags"					"teleport"
+        "ItemQuality"					"consumable"
+        "ItemPermanent"					"1"
+		
+		"AbilityValues"
+		{
+			"maximum_distance"		"800"
+			"vision_radius"			"200"
+		}
+	}
 }

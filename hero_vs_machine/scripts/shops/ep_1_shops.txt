@@ -3,6 +3,7 @@
 	"consumables"  //消耗品
 	{
 		"item" 		"item_tpscroll"
+		"item"		"power_up_canteen_ubercharged"
 	}
     "attributes"
 	{
@@ -27,9 +28,8 @@
 		"item"		"item_mystic_staff"
 
         "item"		"item_ultimate_orb"
-		// "item" 		"item_bracer_plus"
-		"item"		"item_test_bracer_plus"
-		// "item" 		"item_wraith_band_plus"
-		// "item" 		"item_null_talisman_plus"
+		"item" 		"item_bracer_plus"
+		"item" 		"item_wraith_band_plus"
+		"item" 		"item_null_talisman_plus"
     }
 }

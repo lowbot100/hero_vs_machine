@@ -3,7 +3,7 @@
     "npc_dota_home_tower"
 	{
 	    "BaseClass"		"npc_dota_tower"
-        "Model"         "models/props_structures/radiant_tower001.vmdl"  // Model.模型。
+        "Model"         "models/props_structures/rock_golem/tower_radiant_rock_golem.vmdl"  // Model.模型。
 		"SoundSet"					"0"					// Name of sound set.声音集的名称。
 		"Level"						"1"                 // 等级
 		"ModelScale"                "1"                 //模型比例
@@ -47,7 +47,7 @@
 		"AttackRange"				"1000"		// Range within a target can be attacked.可以获得目标内的距离。攻击范围
 		"AttackRangeBuffer"			"250"		// Extra attack range within which the target can move without canceling the attack额外的攻击范围，在此范围内目标可以移动而不取消攻击
 		"ProjectileModel"			"particles/econ/events/ti9/rock_golem_tower/radiant_tower_attack_model.vpcf" // Particle system model for projectile.抛射体的粒子系统模型。抛射体模型  远程有效
-		"ProjectileSpeed"			"600"		// Speed of projectile.抛射体速度。
+		"ProjectileSpeed"			"200"		// Speed of projectile.抛射体速度。
 
 		// Attributes属性
 		//----------------------------------------------------------------
@@ -165,7 +165,7 @@
 
 		"Ability1"      			"sale_tower"
 
-		"BoundsHullName"			"DOTA_HULL_SIZE_LARGE"  //边界外壳名称  填数字为碰撞体积
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"  //边界外壳名称  填数字为碰撞体积
 		"RingRadius"				"250"        //环半径  选取半径
 		"HealthBarOffset"			"-1"		// -1 means use the models.-1表示使用模型
 
@@ -193,12 +193,14 @@
 		"HasInventory"              "0"
 		"IsAncient"					"1"
 
+		"AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+
 		"Ability1"      			"abilities_tower_bonus"
 		"Ability2"					"abilities_invulnerable"
 
-		"BoundsHullName"			"DOTA_HULL_SIZE_LARGE"  //边界外壳名称  填数字为碰撞体积
-		"RingRadius"				"250"        //环半径  选取半径
-		"HealthBarOffset"			"-1"		// -1 means use the models.-1表示使用模型
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"250"
+		"HealthBarOffset"			"500"
 
 		"AttributePrimary"			""
 		"AttributeBaseStrength"		"0"
@@ -213,6 +215,145 @@
 		"MovementTurnRate"			"1.0"
 		"HasAggressiveStance"		"0"
 		"FollowRange"				"100"
+	}
+	"npc_creep_tower" //兵营
+	{
+		"BaseClass" 	"npc_dota_building"
+		"Model"			"models/props_structures/good_barracks_melee001.vmdl"
+		"ModelScale"	"1"
+		"Level"			"1"
+
+		"Ability1"		"abilities_invulnerable"
+		"Ability2"		"spawnunit_melee_goodguy_lv1"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackDamageMin"			"0"
+		"AttackDamageMax"			"0"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_BARRACKS"
+		"RingRadius"				"220"
+		"CollisionSize"				"144"
+
+		"SelectOnSpawn"            "1"
+		"SelectionGroup"           "building_barracks"    // 可自定义分组
+		"HasInventory"             "0"   // 若不需要给建筑物物品栏，保持0
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"	// Needed to cast Point abilities
+		"MovementSpeed"				"0"
+
+		"VisionDaytimeRange"		"500"
+		"VisionNighttimeRange"		"500"
+
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	}
+	//----------------
+	//近战兵--goodguys
+	//----------------
+	"npc_dota_creep_lv3" //超级
+	{
+		"BaseClass"		"npc_dota_creep_lane"
+		"Model"			"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee_mega_crystal.vmdl"
+		"SoundSet"		"Creep_Good_Melee_Mega"
+		"ModelScale"	"1.12"
+		"Level"			"1"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"      		"41"
+		"AttackDamageMax"			"49"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRange"				"1"
+		"AttackAnimationPoint"		"0.467"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"100"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"
+		"RingRadius"				"45"
+		"HealthBarOffset"			"150"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"
+		"MovementTurnRate"			"0.5"
+
+		"StatusHealth"				"1000"
+		"StatusHealthRegen"			"25"
+
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"		"750"
+		"VisionNighttimeRange"		"750"
+	}
+	"npc_dota_creep_lv2" //2级
+	{
+		"BaseClass"		"npc_dota_creep_lane"
+		"Model"			"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee_crystal.vmdl"
+		"SoundSet"		"Creep_Good_Melee_Mega"
+		"ModelScale"	"1"
+		"Level"			"2"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"      		"41"
+		"AttackDamageMax"			"49"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRange"				"1"
+		"AttackAnimationPoint"		"0.467"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"100"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"
+		"RingRadius"				"45"
+		"HealthBarOffset"			"150"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"
+		"MovementTurnRate"			"0.5"
+
+		"StatusHealth"				"750"
+		"StatusHealthRegen"			"12.5"
+
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"		"750"
+		"VisionNighttimeRange"		"750"
+	}
+	"npc_dota_creep_lv1" //1级
+	{
+		"BaseClass"		"npc_dota_creep_lane"
+		"Model"			"models/creeps/lane_creeps/creep_radiant_melee/crystal_radiant_melee.vmdl"
+		"SoundSet"		"Creep_Good_Melee_Mega"
+		"ModelScale"	"0.93"
+		"Level"			"3"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"      		"19"
+		"AttackDamageMax"			"23"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRange"				"1"
+		"AttackAnimationPoint"		"0.467"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"100"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"
+		"RingRadius"				"45"
+		"HealthBarOffset"			"150"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"
+		"MovementTurnRate"			"0.5"
+
+		"StatusHealth"				"500"
+		"StatusHealthRegen"			"6.25"
+
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"		"750"
+		"VisionNighttimeRange"		"750"
 	}
 }
 

@@ -35,20 +35,24 @@
 	}
 	"abilities_invulnerable"
 	{
-		"BaseClass"         "ability_datadriven"
-		"AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"         	"ability_datadriven"
+		"AbilityBehavior"   	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"    ""
 		"MaxLevel" "1"
 		"Modifiers"
 		{
-			"modifier_invulnerable"
+			"modifier_abilities_invulnerable"
 			{
-				"Passive"			"1"
-				"IsHidden"			"0"
-				"IsDebuff"			"0"
-
+				"Passive"       "1"
+				"IsHidden"      "0"
+				"IsPurgable"    "0"
+				"Attributes"
+				{
+					"MODIFIER_ATTRIBUTE_MULTIPLE" "0"
+				}
 				"States"
 				{
-					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}
@@ -59,7 +63,7 @@
 		"AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel" "1"
 		"AbilityCastPoint"    "0.0"
-		"AbilityCastRange"    "200"
+		"AbilityCastRange"    "600"
 		"AbilityCooldown"    "0"
 		"AbilityManaCost"    "0"
 		"Modifiers"
@@ -72,13 +76,12 @@
 				"IsDebuff"              "0"
 
 				"Aura"                  "tower_bonus_effect"
-				"Aura_Radius"           "200"
+				"Aura_Radius"           "600"
 				"Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types"            "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				"Aura_ApplyToCaster"    "0"    // 基地不通过光环获得效果（我们会单独给基地一个 modifier）
 			}
-			// 光环授予的效果（不包含无敌）
 			"tower_bonus_effect"
 			{
 				"Passive"           "1"
@@ -103,6 +106,48 @@
 
 					// 技能冷却时间减少 25%
 					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"       	"25"
+				}
+			}
+		}
+	}
+	"spawnunit_melee_goodguy_lv1"
+	{
+		"BaseClass"             "ability_datadriven"
+		// "AbilityTextureName"    "footman"
+		"MaxLevel"              "1"
+
+		"AbilityBehavior"    			"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityCastRange" 				"99999"
+		"AbilitySharedWithTeammates" 	"1"
+
+		"AbilityGoldCost"    	"10"
+		"AbilityCooldown"		"10"
+
+		"OnSpellStart"
+		{
+
+			"SpawnUnit"
+			{
+				"UnitName"    "npc_dota_creep_lv1"
+				"Target"      "CASTER"
+				"UnitCount"   "0"
+				"UnitLimit"   "0"
+				"GrantsGold"  "1"
+				"GrantsXP"    "1"
+				"SpawnRadius" "100"
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName" "modifier_phased"
+						"Target"       "TARGET"
+						"Duration"     "0.03"
+					}
+					// "RunScript"
+					// {
+					// 	"ScriptFile"    "buildings/rally_point.lua"
+					// 	"Function"      "MoveToRallyPoint"
+					// }
 				}
 			}
 		}
