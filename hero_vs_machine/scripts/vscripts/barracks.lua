@@ -1,11 +1,7 @@
-local building = Entities:FindByName(nil, "barracks_goodguy_1")
+function npc_dota_creep_lv1_spa()
+    for i = 1,3 do
+    GameRules:CreateUnitByName(npc_dota_creep_lv1, Vector_2, bool_3, handle_4, handle_5, DOTA_TEAM_GOODGUYS)
+    end
 
-function GameMode:OnPlayerPickHero(keys)
-    local hero = EntIndexToHScript(keys.heroindex)
-    local player = EntIndexToHScript(keys.player)
-    local playerID = hero:GetPlayerID()
-
-    local building = Entities:FindByName(nil, "barracks_goodguy_1")
-    building:SetOwner(hero)
-    building:SetControllableByPlayer(playerID, true)
+    return 30
 end
