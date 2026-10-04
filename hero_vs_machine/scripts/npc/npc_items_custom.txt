@@ -31,14 +31,4 @@
 			"vision_radius"            "200"
 		}
 	}
-
-	"item_reaver"
-	{
-		"BaseClass"            "item_datadriven"
-		"AbilityTextureName"   "item_reaver"
-		"ItemCost"             "3000"
-		"ItemQuality"          "component"
-		"ItemShopTags"         "secret"
-		"ItemPermanent"        "0"
-	}
 }
