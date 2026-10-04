@@ -1,0 +1,51 @@
+"dota_shops"
+{
+	"consumables"
+	{
+		"item"		"item_ward_observer"
+		"item"		"item_ward_observer"
+		"item"		"item_tango"
+		"item"		"item_enchanted_mango"
+
+		"item"		"item_blood_grenade"
+		"item"		"item_ward_sentry"
+		"item"		"item_flask"
+		"item"		"item_clarity"
+
+		"item"		"item_ubercharged"
+	}
+    "attributes"
+	{
+        "item"		"item_branches"
+		"item"		"item_gauntlets"
+		"item"		"item_slippers"
+		"item"		"item_mantle"
+
+		"item"		"item_circlet"
+		"item"		"item_belt_of_strength"
+		"item"		"item_boots_of_elves"
+		"item"		"item_robe"
+
+		"item"		"item_crown"
+		"item"		"item_ogre_axe"
+		"item"		"item_blade_of_alacrity"
+		"item"		"item_staff_of_wizardry"
+
+		"item"		"item_diadem"
+		"item"    	"item_reaver"
+		"item"		"item_eagle"
+		"item"		"item_mystic_staff"
+
+        "item"		"item_ultimate_orb"
+		"item" 		"item_bracer_plus"
+		"item" 		"item_wraith_band_plus"
+		"item" 		"item_null_talisman_plus"
+    }
+	"basics"
+	{		
+		"item"		"item_ghost"
+		"item"		"item_bracer"
+		"item"		"item_wraith_band"
+		"item"		"item_null_talisman"
+	}
+}
