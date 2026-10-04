@@ -1,0 +1,28 @@
+"DOTAAbilities"
+{
+	"Version" "1"
+    "abilities_invulnerable"
+	{
+		"BaseClass"         	"ability_datadriven"
+		"AbilityBehavior"   	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"    "invulnerability"
+		"MaxLevel" "1"
+		"Modifiers"
+		{
+			"modifier_abilities_invulnerable"
+			{
+				"Passive"       "1"
+				"IsHidden"      "0"
+				"IsPurgable"    "0"
+				"Attributes"
+				{
+					"MODIFIER_ATTRIBUTE_MULTIPLE" "0"
+				}
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"   "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+}

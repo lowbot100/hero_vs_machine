@@ -1,0 +1,61 @@
+"DOTAAbilities"
+{
+	"Version" "1"
+    "abilities_gold"
+	{
+	    "BaseClass" "ability_datadriven"
+		"AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"    "abilities_gold"
+
+		"Modifiers"
+		{
+			"modifiers_abilities_gold"
+			{
+				"BaseClass"         "modifier_datadriven"
+                "Passive"           "1"
+                "IsHidden"          "0"
+                "IsPurgable"        "0"
+				"OnAttacked"
+				{
+					"GrantXPGold"
+					{
+						"Target"		"ATTACKER"
+						"XPAmount"		"10"
+						"GoldAmount"   	"1"
+						"ReliableGold" 	"true"
+						"SplitEvenly"	"false"
+					}
+				}
+			}
+			"modifiers_abilities_gold_effect"
+			{
+				"BaseClass"         "modifier_datadriven"
+                "Passive"           "1"
+                "IsHidden"          "0"
+                "IsPurgable"        "0"
+				"Duration" "3"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/econ/courier/courier_flopjaw_gold/flopjaw_death_coins_gold.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"ATTACKER"
+					}
+				}
+			}
+			"modifiers_abilities_magic_immune"
+			{
+                "BaseClass"         "modifier_datadriven"
+                "Passive"           "1"
+                "IsHidden"          "0"
+                "IsPurgable"        "0"
+			    "States"
+			    {
+				    "MODIFIER_STATE_NO_HEALTH_BAR" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+			    }
+			}
+		}
+	}
+}

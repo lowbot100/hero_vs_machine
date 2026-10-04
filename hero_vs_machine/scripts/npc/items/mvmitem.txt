@@ -1,0 +1,64 @@
+"DOTAAbilities"
+{
+    "Version" "1"
+    "item_ubercharged" //无敌水壶
+    {
+        "BaseClass" "item_datadriven"
+        "ID" "90007"
+        "ItemAliases" "power;up;canteen;uber;ubercharged"
+        "ItemCost" "75"
+        "ItemKillable" "0"
+        "ItemPurchasable" "1"
+        "ItemDroppable" "1"
+
+        "ItemShopTags" "consumable"
+        "ItemQuality" "consumable"
+        "IsConsumable" "1"
+
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "SuggestEarlygame" "1"
+        "AbilityTextureName" "item_ubercharged"
+        "Model" "models/props_gameplay/red_box.vmdl"
+
+        "ItemStackable"         "1"
+        "ItemStackLimit"        "3"
+        "ItemInitialCharges"    "1"
+
+        "OnSpellStart"
+        {
+            "ApplyModifier"
+            {
+                "Target" "CASTER"
+                "ModifierName" "modifier_power_up_canteen_ubercharged"
+                "Duration" "5.0"
+            }
+            // 如果引擎没有自动消耗该物品，你可以显式把它从英雄身上移除，示例（按需启用）：
+            "RemoveItem"
+            {
+                "Target" "CASTER"
+                "ItemName" "item_ubercharged"
+            }
+        }
+        "Modifiers"
+        {
+            "modifier_power_up_canteen_ubercharged"
+            {
+                "BaseClass" "modifier_datadriven"
+                "Passive"       "1"
+                "IsHidden"      "0"
+                "IsPurgable"    "0"
+                "RemoveOnDeath" "1"
+                "Duration" "5.0"
+                "States"
+                {
+                    "MODIFIER_STATE_INVULNERABLE"       "MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NO_UNIT_COLLISION"  "MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+        }
+        "AbilityValues"
+		{
+			"wudishijiang" "5"
+		}
+    }
+}

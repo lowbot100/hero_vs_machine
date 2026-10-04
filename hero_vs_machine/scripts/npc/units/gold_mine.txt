@@ -1,0 +1,27 @@
+"DOTAUnits"
+{
+    "npc_dota_gold_mine"
+	{
+		"BaseClass"		"npc_dota_creature"
+    	"Model"         "models/props_gameplay/treasure_chest001.vmdl"
+		"SoundSet"					"0"
+		"Level"						"1"
+		"ModelScale"                "2.0"
+		"HasInventory"              "0"
+		"IsNeutralUnitType"			"1"
+		"SelectOnSpawn"				"0"
+		"CanBeDominated"			"0"
+		"AutoAttacksByDefault"		"0"
+		"Ability1"      			"abilities_gold"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"ArmorPhysical"				"99999"
+		"MagicalResistance"			"100"
+		"BoundsHullName"			"DOTA_HULL_SIZE_FILLER"
+		"RingRadius"				"100"
+		"HealthBarOffset"			"-1"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"StatusHealth"				"99999"
+		"StatusHealthRegen"			"99999"
+    }
+}

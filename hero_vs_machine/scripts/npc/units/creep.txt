@@ -1,0 +1,108 @@
+"DOTAUnits"
+{ 
+    //----------------
+	//近战兵--goodguys
+	//----------------
+	"npc_dota_creep_lv3" //超级
+	{
+		"BaseClass"		"npc_dota_creep_lane"
+		"Model"			"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee_mega_crystal.vmdl"
+		"SoundSet"		"Creep_Good_Melee_Mega"
+		"ModelScale"	"1.12"
+		"Level"			"1"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"      		"41"
+		"AttackDamageMax"			"49"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRange"				"1"
+		"AttackAnimationPoint"		"0.467"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"100"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"
+		"RingRadius"				"45"
+		"HealthBarOffset"			"150"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"
+		"MovementTurnRate"			"0.5"
+
+		"StatusHealth"				"1000"
+		"StatusHealthRegen"			"25"
+
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"		"750"
+		"VisionNighttimeRange"		"750"
+	}
+	"npc_dota_creep_lv2" //2级
+	{
+		"BaseClass"		"npc_dota_creep_lane"
+		"Model"			"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee_crystal.vmdl"
+		"SoundSet"		"Creep_Good_Melee_Mega"
+		"ModelScale"	"1"
+		"Level"			"2"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"      		"41"
+		"AttackDamageMax"			"49"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRange"				"1"
+		"AttackAnimationPoint"		"0.467"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"100"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"
+		"RingRadius"				"45"
+		"HealthBarOffset"			"150"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"
+		"MovementTurnRate"			"0.5"
+
+		"StatusHealth"				"750"
+		"StatusHealthRegen"			"12.5"
+
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"		"750"
+		"VisionNighttimeRange"		"750"
+	}
+	"npc_dota_creep_lv1" //1级
+	{
+		"BaseClass"		"npc_dota_creep_lane"
+		"Model"			"models/creeps/lane_creeps/creep_radiant_melee/crystal_radiant_melee.vmdl"
+		"SoundSet"		"Creep_Good_Melee_Mega"
+		"ModelScale"	"0.93"
+		"Level"			"3"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"      		"19"
+		"AttackDamageMax"			"23"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRange"				"1"
+		"AttackAnimationPoint"		"0.467"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"100"
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"
+		"RingRadius"				"45"
+		"HealthBarOffset"			"150"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"325"
+		"MovementTurnRate"			"0.5"
+
+		"StatusHealth"				"500"
+		"StatusHealthRegen"			"6.25"
+
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"VisionDaytimeRange"		"750"
+		"VisionNighttimeRange"		"750"
+	}
+}

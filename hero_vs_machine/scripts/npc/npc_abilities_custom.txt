@@ -1,0 +1,5 @@
+#base "abilities/givegold.txt"  				//打金矿
+#base "abilities/invulnerable.txt" 				//真无敌
+#base "abilities/tower_bonus_aura.txt" 			//塔光环
+#base "abilities/tower_attack.txt"				//塔攻击
+#base "abilities/spawn_creep.txt"				//天辉军队

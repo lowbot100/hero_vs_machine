@@ -1,0 +1,45 @@
+"DOTAAbilities"
+{
+	"Version" "1"
+    "abilities_tower_bonus"
+	{
+		"BaseClass"         "ability_datadriven"
+		"AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel" "1"
+		"AbilityCastPoint"    "0.0"
+		"AbilityCastRange"    "600"
+		"AbilityCooldown"    "0"
+		"AbilityManaCost"    "0"
+		"Modifiers"
+		{
+			"tower_bonus"
+			{
+				"Passive"               "1"
+				"IsHidden"              "0"
+				"IsDebuff"              "0"
+
+				"Aura"                  "tower_bonus_effect"
+				"Aura_Radius"           "600"
+				"Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"            "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_ApplyToCaster"    "0"
+			}
+			"tower_bonus_effect"
+			{
+				"Passive"           "1"
+				"IsHidden"          "0"
+				"IsDebuff"          "0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"      	"10"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"  	"10"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"     	"10"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"       	"10"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	"25"
+					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"       	"25"
+				}
+			}
+		}
+	}
+}

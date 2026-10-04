@@ -1,0 +1,30 @@
+"DOTAAbilities"
+{
+	"Version" "1"
+    "spawnunit_melee_goodguy_lv1"
+	{
+		"BaseClass"             "ability_datadriven"
+		"MaxLevel"              "1"
+
+		"AbilityBehavior"    			"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityCastRange" 				"99999"
+		"AbilitySharedWithTeammates"    "1"
+
+		"AbilityGoldCost"    	"0"
+		"AbilityCooldown"		"10"
+
+		"OnSpellStart"
+		{
+			"SpawnUnit"
+			{
+				"UnitName"    "npc_dota_creep_lv1"
+				"Target"      "POINT"
+				"UnitCount"   "1"
+				"UnitLimit"   "10"
+				"GrantsGold"  "0"
+				"GrantsXP"    "0"
+				"SpawnRadius" "100"
+			}
+		}
+	}
+}

@@ -1,0 +1,79 @@
+"DOTAAbilities"
+{
+	"Version" "1"
+    "ursa_fury_swipes_custom"
+	{
+		"BaseClass"              "ability_datadriven"
+		"AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"     "ursa_fury_swipes"
+		"IntrinsicModifierName"  "modifier_ursa_fury_swipes_passive"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"damage_per_stack" "12 20 28 36"    // 每层固定额外伤害，按技能等级 1/2/3/4
+			}
+			"02"
+			{
+				"var_type" "FIELD_FLOAT"
+				"debuff_duration" "8 12 16 20"      // 每层在目标上的持续时间（秒），按等级
+			}
+		}
+
+		"Modifiers"
+		{
+			// 施法者的隐性被动：在每次攻击命中时给目标添加一层 debuff
+			"modifier_ursa_fury_swipes_passive"
+			{
+				"IsHidden" "1"
+				"IsPurgable" "0"
+
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"Target" "ATTACK_TARGET"
+						"ModifierName" "modifier_ursa_fury_swipes_stack"
+						"Duration" "%debuff_duration"
+					}
+
+					"PlaySound"
+					{
+						"Target" "CASTER"
+						"SoundName" "Hero_Ursa.FurySwipes"
+					}
+				}
+			}
+
+			// 叠加在被攻击目标上的层：每个实例在目标被攻击时对目标造成固定伤害
+			"modifier_ursa_fury_swipes_stack"
+			{
+				"IsHidden" "0"
+				"IsPurgable" "1"
+				"IsDebuff" "1"
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				// 当此单位被攻击时（即 Ursa 攻击目标），触发一次 Damage 动作。
+				// 每个实例都会触发一次，因此 N 层 = N * damage_per_stack 额外伤害。
+				"OnAttacked"
+				{
+					"Damage"
+					{
+						"Target" "TARGET"
+						"Attacker" "ATTACKER"
+						"Damage" "%damage_per_stack"
+						"DamageType" "DAMAGE_TYPE_PHYSICAL"
+						"IsAngular" "0"
+					}
+				}
+
+				"Texture" "ursa_fury_swipes"
+				"StatusEffectPriority" "10"
+				"EffectName" "particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
+				"EffectAttachType" "follow_origin"
+			}
+		}
+	}
+}

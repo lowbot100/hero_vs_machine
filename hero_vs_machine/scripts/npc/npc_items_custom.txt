@@ -1,0 +1,34 @@
+#base "abilities/xiaojianplus.txt"  //自定义物品，小件
+#base "abilities/mvmitem.txt"       //TF2 MVM物品
+"DOTAAbilities"
+{
+    "Version" "1"
+    //-------------------------------------
+    //传送卷轴
+    //-------------------------------------
+    "item_tpscroll"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+
+        "ItemCost" "0"
+
+        "AbilityCastRange"				"99999"
+        "AbilityChannelTime"			"1.0"
+        "AbilityCooldown"				"10.0"
+        "AbilityManaCost"				"0"
+        "AbilityGoldCost"    	        "10"
+
+        "ItemShopTags"					"teleport"
+        "ItemQuality"					"consumable"
+        "ItemPermanent"					"1"
+		
+		"AbilityValues"
+		{
+			"maximum_distance"		"800"
+			"vision_radius"			"200"
+		}
+	}
+}

@@ -1,0 +1,3 @@
+#base "units/gold_mine.txt"			//金矿
+#base "units/tower.txt"				//塔
+#base "units/creep.txt"				//兵
